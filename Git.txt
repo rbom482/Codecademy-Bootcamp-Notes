@@ -11,10 +11,12 @@
     - remote repository: Project folder on Github
   - stage: Prepare files to be committed
   - commit: Save changes
+  - push: Upload
+  - pull: Download
   
 # Local Workflow
-  - Working directory: Make changes (Red)
-  - Staging area: Changes ready to be 'commited' are moved here (Green)
+  - Working directory: Make changes (Red in terminal)
+  - Staging area: Changes ready to be 'commited' are moved here (Green in terminal)
   - Local repository (.git): Commited changes are saved here
 
 # Steps to upload a project on Github
@@ -32,10 +34,17 @@
         - git add file1.html: Stage file1.html
         - git add .: Stage all files
       - git commit -m "Message": Commit changes
+      - git remote add origin [remote repsitory link]: Link local repository to remote repository
+      - git push -u origin master: Push commited changes to 'master' branch in the remote repository 
+    - Second time and onwards
+      - git add: Stage files
+        - git add file1.html: Stage file1.html
+        - git add .: Stage all files
+      - git commit -m "Message": Commit changes
+      - git push: Push commited changes to 'master' branch in the remote repository
 
     - Generic
       - git status: Current status of local repository
-  - Working with Remotes
 
 
 # Branches:

@@ -1,0 +1,147 @@
+/* GLOBAL */
+body {
+  background-color: #E9E9E9;
+  color: #1C4B8F;
+  margin-top: 0;
+}
+
+/* NAVBAR */
+#navbar {
+  color: #E9E9E9;
+  background-color: #1C4B8F;
+  padding: 5px 10px;
+  margin-top: 0;
+}
+
+#navbar {
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+
+#navbar li {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+#navbar li a {
+  color: #E9E9E9;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+/* HEADER */
+#header {
+  text-align: center;
+}
+
+#header h1 {
+  font-size: 64px;
+  margin-bottom: 0;
+}
+
+#header p {
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+#header ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#header ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+#header ul li a {
+  color: #1C4B8F;
+  text-decoration: none;
+}
+
+/* ABOUT */
+#about {
+  margin-top: 30px;
+  color: #E9E9E9;
+  background-color: #1C4B8F;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* EXPERIENCE */
+#experience {
+  margin-top: 30px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 2px solid #1C4B8F;
+  background-color: white;
+}
+
+#experience ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#experience .single-exp {
+  margin-bottom: 30px;
+}
+
+#experience .single-exp>li {
+  font-size: 18px;
+  font-weight: 600;
+  background-color: rgba(28, 75, 143, 0.5);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+
+#experience .single-exp div {
+  text-align: right;
+  font-style: italic;
+}
+
+/* PROJECTS */
+#projects {
+  margin-top: 30px;
+  text-align: center;
+  border: 2px solid #1C4B8F;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#projects h1 {
+  text-align: left;
+}
+
+#projects .project {
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  margin: 0 10px;
+  background-color: #1C4B8F;
+  font-size: 24px;
+  padding: 100px 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+#projects .project:hover {
+  cursor: pointer;
+  background-color: rgba(28, 75, 143);
+}
+
+#projects .project a {
+  color: #E9E9E9;
+  text-decoration: none;
+}
+
+/* SKILLS */
+#skills {
+  color: #E9E9E9;
+  background-color: #1C4B8F;
+  margin-top: 30px;
+  padding: 5px 10px;
+  border-radius: 10px;
+}

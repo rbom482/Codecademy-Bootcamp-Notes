@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediaQueries</title>
+  <style>
+    html {
+      font-size: 20px;
+    }
+
+    body {
+      background-color: #eee;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 4em;
+    }
+
+    #container {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    #container .card {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      text-align: center;
+      padding-bottom: 10px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    #container .card p, #container .card button {
+      font-size: 1.75rem;
+      margin: 0.5rem;
+    }
+
+    #container .card img {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+    }
+
+    #container .card button {
+      background-color: green;
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    @media screen and (max-width: 480px) {
+      html {
+        font-size: 12px;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #container .card {
+        width: 250px;
+        margin: 10px auto;
+      }
+    }
+
+    /* ------------------------------- */
+      /* DESKTOP-FIRST APPROACH */
+    /* ------------------------------- */
+    /* Generic devices */
+    /* #container-2 {
+      background-color: blue;
+      height: 500px;
+      width: 500px;
+    } */
+
+    /* Mobile devices (<= 480) */ 
+    /* @media screen and (max-width: 480px) {
+      #container-2 {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    } */
+    
+    /* ------------------------------- */
+      /* MOBILE-FIRST APPROACH */
+    /* ------------------------------- */
+    /* Generic devices */
+    /* #container-3 {
+      width: 100%;
+      background-color: cornflowerblue;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    img {
+      width: 100%;
+    } */
+
+    /* Desktop devices (>= 992px) */
+    /* @media screen and (min-width: 992px) {
+      #main-container {
+        display: flex;
+      }
+      img {
+        width: 300px;
+      }
+    } */
+  </style>
+</head>
+<body>
+  <h1>Skin Care Products</h1>
+  <div id="container">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZHVjdHN8ZW58MHx8MHx8fDA%3D">
+      <p>XYZ Lotion</p>
+      <p>$25</p>
+      <button>Add to cart</button>
+      <button>Buy now</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZHVjdHN8ZW58MHx8MHx8fDA%3D">
+      <p>XYZ Lotion</p>
+      <p>$25</p>
+      <button>Add to cart</button>
+      <button>Buy now</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZHVjdHN8ZW58MHx8MHx8fDA%3D">
+      <p>XYZ Lotion</p>
+      <p>$25</p>
+      <button>Add to cart</button>
+      <button>Buy now</button>
+    </div>
+  </div>
+
+  <div id="container-2"></div>
+
+  <!-- <div id="main-container">
+    <div id="container-3">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolor ipsam nostrum aliquam, eius quisquam cumque tenetur beatae molestiae placeat, sed aliquid. Repudiandae mollitia autem dolorum laboriosam quidem numquam qui dignissimos temporibus iure nesciunt? Blanditiis dicta dolorem deleniti reiciendis et iure atque alias, hic laudantium veritatis, unde non placeat quo nobis accusantium aperiam labore. Quas quis ullam dolorum aut sit quasi maxime laboriosam a eius, expedita incidunt beatae est natus recusandae eligendi praesentium obcaecati error minus libero vero porro cumque reiciendis quia veniam! Veritatis distinctio veniam quibusdam qui ducimus officia, hic, atque id aspernatur laudantium ab quia provident recusandae eaque.
+    </div>
+    <img src="https://images.unsplash.com/photo-1604964432806-254d07c11f32?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="coding">
+  </div> -->
+</body>
+</html>
+
+
+<!--
+  # Media Queries:
+    - Style rules for different screen sizes
+    - Syntax:
+      @media mediaType and (condition) {
+        // style to be applied to those devices which match the above condition
+      }
+
+    - mediaType
+      - screen ***: Screen
+      - print: Print
+      - all: All media types
+
+    - condition
+      - max-width ***: Device width lesser than or equals to the given width
+      - min-width ***: Device width greater than or equals to the given width
+      - max-height: Device height lesser than or equals to the given height
+      - min-height: Device height greater than or equals to the given height
+
+    - Two approaches
+      - Desktop-first approach:
+        - Start with desktop, then add seperate rules for mobile
+      - Mobile-first approach:
+        - Start with mobile, then add seperate rules for desktop
+
+    - Breakpoints
+      - Laptops/Desktop: >= 992px ***
+      - Tablets: > 480px and < 992
+      - Mobile: <= 480px ***
+
+    - References:
+      - https://getbootstrap.com/docs/5.3/layout/breakpoints/
+-->

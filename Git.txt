@@ -57,4 +57,4 @@
   - Separate branches can be created to work on individual featurs. For eg., in Amazon: Separate branches for Amazon Pay, Shopping, Prime Video features
 
 # References:
-https://uidaholib.github.io/get-git/images/workflow.png
+- https://uidaholib.github.io/get-git/images/workflow.png

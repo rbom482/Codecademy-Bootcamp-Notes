@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specificity</title>
+  <style>
+    h1 {
+      font-size: 75px;
+    }
+
+    .heading-1 {
+      font-size: 40px;
+    }
+
+    #main-heading {
+      font-size: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="heading-1" id="main-heading">Specificity</h1>
+
+  <span>Test</span>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat iste rem provident natus, sapiente amet ipsa dolorem perspiciatis officia molestiae magni eum velit quidem. Perferendis corporis enim officia asperiores eos!</p>
+</body>
+</html>
+
+<!--
+  # Specificity:
+    - Priority of a particular style over another style
+
+    - Main Rules
+      - Latest style rule applies
+      - Inline > Internal, External
+
+    - Priority (rank from top to bottom)
+      1. ID Selector (#id)
+      2. Class Selector (.class)
+      3. Element Selector (h1, p, div, etc.)
+      4. Universal Selector (*) - Lowest
+
+    - Additional Note:
+      - !important: This keyword overrites the other rules without specificity restrictions (Overuse is not a good practice)
+-->

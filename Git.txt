@@ -1,0 +1,60 @@
+# Git: Version control tool
+
+# Github: A cloud for uploading project tracked using Git
+  - Alternatives:
+    - Gitlab
+    - Bitbucket
+
+# Terms:
+  - repository: Project folder (Being tracked by Git)
+    - local repository: Local project folder
+    - remote repository: Project folder on Github
+  - stage: Prepare files to be committed
+  - commit: Save changes
+  - push: Upload
+  - pull: Download
+  
+# Local Workflow
+  - Working directory: Make changes (Red in terminal)
+  - Staging area: Changes ready to be 'commited' are moved here (Green in terminal)
+  - Local repository (.git): Commited changes are saved here
+
+# Steps to upload a project on Github
+  - Github:
+    - Create a new remote repository
+      - name: Name of the project
+      - description: Description of the project
+      - visibility: Private/Public
+        - Public (Open source)
+      - README.md: Project description file
+  - Local:
+    - First time:
+      - git init: Initialize a local git repository
+      - git add: Stage files
+        - git add file1.html: Stage file1.html
+        - git add .: Stage all files
+      - git commit -m "Message": Commit changes
+      - git remote add origin [remote repsitory link]: Link local repository to remote repository
+      - git push -u origin master: Push commited changes to 'master' branch in the remote repository
+    - Second time and onwards
+      - git add: Stage files
+        - git add file1.html: Stage file1.html
+        - git add .: Stage all files
+      - git commit -m "Message": Commit changes
+      - git push: Push commited changes to 'master' branch in the remote repository
+
+    - Generic
+      - git status: Current status of local repository
+    
+# Steps to download a project on Github
+  - First time:
+    - git clone [remote repsitory link]: Clone of online repository in local machine
+  - Second time and onwards
+    - git pull: Pull latest commits from 'master' branch in the remote repository to local repository
+
+# Branches:
+  - Default (master/main)
+  - Separate branches can be created to work on individual featurs. For eg., in Amazon: Separate branches for Amazon Pay, Shopping, Prime Video features
+
+# References:
+- https://uidaholib.github.io/get-git/images/workflow.png

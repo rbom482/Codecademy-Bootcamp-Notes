@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prime Number Checker</title>
+</head>
+<body>
+  <h1>Prime Number Checker</h1>
+
+  <!-- Input field to enter a number -->
+  <input type="number" id="numberInput" placeholder="Enter a number" />
+  
+  <!-- Button to run the check -->
+  <button onclick="checkPrime()">Check</button>
+
+  <!-- Result will be shown here -->
+  <p id="result"></p>
+
+  <script>
+    function checkPrime() {
+      const input = document.getElementById("numberInput").value;
+      const number = parseInt(input);
+      const resultElement = document.getElementById("result");
+
+      console.clear(); // Clear console before each run
+      console.log("Checking number:", number);
+
+      if (isNaN(number)) {
+        resultElement.textContent = "Please enter a valid number.";
+        return;
+      }
+
+      if (number <= 1) {
+        resultElement.textContent = number + " is NOT a prime number.";
+        console.log("Reason: Prime numbers must be greater than 1.");
+        return;
+      }
+
+      let isPrime = true;
+
+      for (let i = 2; i < number; i++) {
+        console.log("Trying to divide " + number + " by " + i);
+        if (number % i === 0) {
+          console.log(i + " is a factor of " + number);
+          isPrime = false;
+          break;
+        } else {
+          console.log(i + " is NOT a factor of " + number);
+        }
+      }
+
+      if (isPrime) {
+        resultElement.textContent = number + " is a PRIME number.";
+        console.log("Result: No factors found. It is prime.");
+      } else {
+        resultElement.textContent = number + " is NOT a prime number.";
+        console.log("Result: Found a factor. It is not prime.");
+      }
+    }
+  </script>
+</body>
+</html>

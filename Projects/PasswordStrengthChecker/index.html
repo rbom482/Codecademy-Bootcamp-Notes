@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Strength Checker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container mt-3 text-center">
+    <h1 class="display-4 mb-3">Password Strength Checker</h1>
+  
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="invalid-pwd-alert" style="display: none;">
+      <strong>Invalid password!</strong> Please enter a valid password
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="my-3 fs-5">
+      <span class="badge text-bg-success" id="strong-pwd" style="display: none;">Your password is strong</span>
+      <span class="badge text-bg-warning" id="moderate-pwd" style="display: none;">Your password is moderate</span>
+      <span class="badge text-bg-danger" id="weak-pwd" style="display: none;">Your password is weak</span>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center" id="length-check-container">
+        Atleast 8 characters
+        <span id="length-check"></span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center" id="lowercase-check-container">
+        Atleast one lowercase character
+        <span id="lowercase-check"></span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center" id="uppercase-check-container">
+        Atlease one uppercase character
+        <span id="uppercase-check"></span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center" id="number-check-container">
+        Atleast one number
+        <span id="number-check"></span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center" id="special-char-check-container">
+        Atleast one special character ($, @, #)
+        <span id="special-char-check"></span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center" id="no-easy-pwd-container">
+        No easy password
+        <span id="no-easy-pwd-check"></span>
+      </li>
+    </ul>
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</body>
+</html>

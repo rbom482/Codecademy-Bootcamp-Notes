@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>this keyword</title>
+</head>
+<body>
+  <h1>Test</h1>
+
+  <script>
+    /*
+      # this keyword: Refers to it's immediate parent object
+        - Within a method of an object: Refers to the parent object
+        - In global scope: Refers to the window object
+
+        - Addition note:
+          - Window object is the Browser Object Model (BOM)
+            - Complete information about the webpage and the broswer details
+            - Reserved: window
+    */
+
+    // const simonDetails = {
+    //   name: 'Simon',
+    //   age: 26,
+    //   isGraduated: true,
+    //   favouriteColor: null,
+    //   hobbies: ['Swimming', 'Cycling', 'Dancing'],
+    //   displayIntroduction: function() {
+    //     console.log("Hi, I'm " + this.name + "! I'm " + this.age + " years old. ...")
+    //   }
+    // }
+
+    // const deeDetails = {
+    //   name: 'Dee',
+    //   age: 25,
+    //   isGraduated: false,
+    //   favouriteColor: null,
+    //   hobbies: ['Singing', 'Dancing'],
+    //   displayIntroduction: function() {
+    //     console.log("Hi, I'm " + this.name + "! I'm " + this.age + " years old. ...")
+    //   }
+    // }
+
+    // simonDetails.displayIntroduction()
+    // deeDetails.displayIntroduction()
+
+    // console.log(this) // Window object
+  </script>
+</body>
+</html>

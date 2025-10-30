@@ -32,16 +32,56 @@
     // add(50, 60)
 
     /* -------------------------- */
+    // function abc() {
+    //   console.log('abc')
+    //   def()
+    // }
+
+    // function def() {
+    //   console.log('def')
+    // }
+
+    // abc()
+
+    /* -------------------------- */
+    /*
+      # Lexical Environment/ Scope:
+        - "Lexical" means where a specific identifier is declared/written in the complete code
+          - Lexical env: The area where the identifier can be accessed
+        - Inner scopes can access variables declared in the outer scopes (comes under it's lexical environment), but vice-versa is not possible
+    */
+
+    // let num1 = 5
+    // function abc() {
+    //   let num2 = 10
+    //   if(true) {
+    //     let num3 = 100
+    //     console.log(num1, num2, num3) // All 3 numbers are accessible because it is within the lexical environment
+    //   }
+    // }
+    // abc()
+
+    /* -------------------------- */
+    /*
+      # Scope chain:
+        - Used to resolve identifier values. If a identifier is not found in the current scope, JS checks it in the parent scope, if not, continues checkup up until the global scope
+    */
+
+    var num1 = 10
     function abc() {
-      console.log('abc')
+      var num2 = 20
+      console.log(num1, num2)
+
+      function def(){
+        var num3 = 100
+        console.log(num1, num2, num3)
+      }
       def()
     }
-
-    function def() {
-      console.log('def')
-    }
-
     abc()
+
+    // Scope chain of def: def -> abc -> Global
+    // Scope chain of abc: abc -> Global
   </script>
 </body>
 </html>

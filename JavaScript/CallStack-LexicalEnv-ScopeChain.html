@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Stack</title>
+</head>
+<body>
+  <script>
+    /*
+      # Call Stack: Handles function execution by pushing/popping function execution context(s) into/from the stack
+        - Stack data structure: LIFO (Last in First out)
+
+
+      # JS code visualizer tools:
+        - https://pythontutor.com/render.htm
+        - https://www.jsv9000.app/
+    */
+
+    // function add(num1, num2) {
+    //   let sum = num1 + num2
+    //   console.log(sum)
+    // }
+
+    // function subtract(num1, num2) {
+    //   let diff = num1 - num2
+    //   console.log(diff)
+    // }
+
+    // add(10, 20)
+    // subtract(100, 40)
+    // add(50, 60)
+
+    /* -------------------------- */
+    function abc() {
+      console.log('abc')
+      def()
+    }
+
+    function def() {
+      console.log('def')
+    }
+
+    abc()
+  </script>
+</body>
+</html>

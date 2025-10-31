@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6 Concept</title>
+</head>
+<body>
+  <script>
+    /*
+      # ES6 Concepts:
+        - ES: ECMAScript
+        - ES6: JavaScript 6th version (2015)
+        - Several 'Syntax sugar' (Minimalist syntaxes) were introduced in this version
+        - ES6 is used extensively in JS libraries like React, Vue, Angular, etc.
+
+        - Concepts/Syntaxes:
+          1. let and const (Block scope) ***
+            - let: Declare variables
+            - const: Declare constants
+          2. Template literals/strings (``)
+            - It starts and ends with back ticks (`)
+            - Supports multi-line strings and expressions
+            - Syntax to use variables within template strings
+              - `${variable}`
+          3. Default parameters
+            - Default values can be provided to the function parameters. In the case when arguments are not provided, the default values are used
+            - Syntax: function abc(a = 0, b = 0) {}
+          4. Arrow functions (() => {}) ***
+            - Syntactic sugar for anonymous function
+            - Syntax:
+              const abc = () => {
+                console.log('abc')
+              }
+              - Single line arrow function
+                - Syntax:
+                  const abc = () => console.log('abc')
+                - Scenarios:
+                  - Executes a single expression (Skip {})
+                  - Single expression with a return value (Skip {} and return)
+                - Additional note: Skip () if only 1 paramater exist
+          5. Object property shorthand ({ prop1, prop2 })
+            - Whenever the variable name and the object property name are the same, instead of 'key:value', only 'key' can be specified
+          6. Destructuring ({ prop1 } = obj)
+            - Create variables having the same name as property name and have the value = value of that property
+            - Syntax: 
+              const { a, b } = obj1
+              - Different variable name for properties
+                const { a: test1, b: test2 } = obj1
+          7. Spread Operator (...)
+            - Used with arrays and objects
+            - Syntax:
+              [...arr] (Arrays)
+              {...obj} (Objects)
+            - Additional note:
+              - Shallow copy: 
+                - First order properties/elements are copies
+                - Best for simple arrays and objects
+              - Deep copy:
+                - Complete copy of the properies across all levels/orders
+                - Best for complex arrays and objects
+    */
+
+    /* ------------------------- */
+    // const str1 = `
+    //   My hobbies
+    //     - Swimming
+    //     - Dancing
+    // `
+    // console.log(str1)
+
+    // const student1 = {
+    //   name: "Madeline",
+    //   numberOfProjectSubmitted: 5,
+    //   city: "New York"
+    // }
+
+    // const str1 = "Hi, I'm " + student1.name + ". I have submitted " + student1.numberOfProjectSubmitted + " number of projects by far. I reside in " + student1.city + "!"
+    // const str1 = `Hi, I'm ${student1.name}. I have submitted ${student1.numberOfProjectSubmitted} number of projects by far. I reside in ${student1.city}!`
+    // console.log(str1)
+
+    /* ------------------------- */
+    // function sum(num1, num2, num3 = 0) {
+    //   return num1 + num2 + num3
+    // }
+
+    // // console.log(sum(5, 10, 15))
+    // console.log(sum(5, 10))
+
+    /* ------------------------- */
+    // const abc = () => {
+    //   console.log('Hi')
+    // }
+    // abc()
+
+    // const sum = (num1, num2) => {
+    //   return num1 + num2
+    // }
+    // console.log(sum(5, 10))
+
+    // const abc = () => console.log('Hi')
+    // abc()
+
+    // const sum = (num1, num2) => num1 + num2
+    // console.log(sum(5, 10))
+
+    // const add = (a, b) => a + b
+    // const subtract = (a, b) => a + b
+    // const multiply = (a, b) => a * b
+    // const divide = (a,b) => a / b
+
+    // const sayHi = friend => console.log(`Hi ${friend}!`)
+    // sayHi('Mark')
+    // sayHi('Kelly')
+
+    /* ------------------------- */
+    // const name = 'Mark'
+    // const batch = 2
+    // const projectsSub = 5
+    // const city = 'London'
+
+    // const student1 = {
+    //   name: name,
+    //   batch: batch,
+    //   projectsSub: projectsSub,
+    //   city: city
+    // }
+
+    // const student1 = { name, batch, projectsSub, city }
+    // console.log(student1)
+
+    /* ------------------------- */
+    // const student1 = {
+    //   name: "Madeline",
+    //   city: "New York",
+    //   country: "USA"
+    // }
+    // const name = student1.name
+    // const city = student1.city
+    // const country = student1.country
+
+    // const { 
+    //   name, 
+    //   city, 
+    //   country 
+    // } = student1
+
+    // console.log(`Hi, I'm ${name}. I reside in ${city}, ${country}!`)
+
+    // const student1 = {
+    //   name: "Madeline",
+    //   city: "New York",
+    //   country: "USA"
+    // }
+
+    // const student2 = {
+    //   name: "Mary",
+    //   city: "London",
+    //   country: "UK"
+    // }
+
+    // const { 
+    //   name, 
+    //   city, 
+    //   country 
+    // } = student1
+
+    // const {
+    //   name: name2,
+    //   city: city2,
+    //   country: country2
+    // } = student2
+
+    // console.log(`Hi, I'm ${name2}. I reside in ${city2}, ${country2}!`)
+
+    // const obj = { a: 5, b: 10 }
+    // const { a: test1, b: test2 } = obj
+    // console.log(test1, test2)
+
+    /* ------------------------- */
+    // const arr1 = [1, 2, 3, 4, 5]
+    // console.log(arr1)
+    // console.log(...arr1)
+
+    // ## Copy of non-primitive value: Shallow copy instead of non-primitive assignment
+    // # Way 1 (Non primitive assigment: reference gets assigned)
+    // const arr2 = arr1 // Both are referring to the same array in the heap memory
+    // arr1[0] = 100
+    // console.log(arr1)
+    // console.log(arr2)
+
+    // # Way 2 (Shallow copy: Creating a brand new copy of the array)
+    // const arr3 = [...arr1]
+    // arr1[0] = 100
+    // console.log(arr1)
+    // console.log(arr3)
+
+    // const student1 = {
+    //   name: "Madeline",
+    //   address: {
+    //     city: "New York",
+    //     country: "USA"
+    //   }
+    // }
+
+    // ## To create a copy of student1
+    // # Shallow copy (Only first order properties are copied)
+    // const student2 = { ...student1 }
+    // student1.address.city = 'California'
+    // console.log(student2)
+
+    // # Deep copy (All level/order properties are copied)
+    // const student2 = JSON.parse(JSON.stringify(student1))
+    // student1.address.city = 'California'
+    // console.log(student2)
+  </script>
+</body>
+</html>

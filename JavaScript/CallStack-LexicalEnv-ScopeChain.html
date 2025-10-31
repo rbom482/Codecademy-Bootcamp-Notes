@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Stack</title>
+</head>
+<body>
+  <script>
+    /*
+      # Call Stack: Handles function execution by pushing/popping function execution context(s) into/from the stack
+        - Stack data structure: LIFO (Last in First out)
+
+
+      # JS code visualizer tools:
+        - https://pythontutor.com/render.htm
+        - https://www.jsv9000.app/
+    */
+
+    // function add(num1, num2) {
+    //   let sum = num1 + num2
+    //   console.log(sum)
+    // }
+
+    // function subtract(num1, num2) {
+    //   let diff = num1 - num2
+    //   console.log(diff)
+    // }
+
+    // add(10, 20)
+    // subtract(100, 40)
+    // add(50, 60)
+
+    /* -------------------------- */
+    // function abc() {
+    //   console.log('abc')
+    //   def()
+    // }
+
+    // function def() {
+    //   console.log('def')
+    // }
+
+    // abc()
+
+    /* -------------------------- */
+    /*
+      # Lexical Environment/ Scope:
+        - "Lexical" means where a specific identifier is declared/written in the complete code
+          - Lexical env: The area where the identifier can be accessed
+        - Inner scopes can access variables declared in the outer scopes (comes under it's lexical environment), but vice-versa is not possible
+    */
+
+    // let num1 = 5
+    // function abc() {
+    //   let num2 = 10
+    //   if(true) {
+    //     let num3 = 100
+    //     console.log(num1, num2, num3) // All 3 numbers are accessible because it is within the lexical environment
+    //   }
+    // }
+    // abc()
+
+    /* -------------------------- */
+    /*
+      # Scope chain:
+        - Used to resolve identifier values. If a identifier is not found in the current scope, JS checks it in the parent scope, if not, continues checkup up until the global scope
+    */
+
+    var num1 = 10
+    function abc() {
+      var num2 = 20
+      console.log(num1, num2)
+
+      function def(){
+        var num3 = 100
+        console.log(num1, num2, num3)
+      }
+      def()
+    }
+    abc()
+
+    // Scope chain of def: def -> abc -> Global
+    // Scope chain of abc: abc -> Global
+  </script>
+</body>
+</html>

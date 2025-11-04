@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Higher Order Methods</title>
+</head>
+<body>
+  <script>
+    /*
+      # Array Higher Order Methods:
+        - Methods which use callback syntax
+
+        1. forEach() ***
+          - Syntax:
+            arr.forEach((element, index) => {
+              // Code which executes for each element
+            })
+          - Iterate through the elements of the array and execute callback for each element
+          - Callback parameters:
+            - 1st parameter: Element
+            - 2nd parameter: Index
+          - Does not return anything (undefined)
+    */
+
+    // Example 1: Simple iteration
+    // const arr = [100, 150, 200, 250, 300]
+    // arr.forEach((element, index) => {
+    //   console.log(index, element)
+    // })
+
+    /* --------------- */
+    // Example 2: Calculate sum of elements of an array
+    // const arr = [129, 346666, 2044034, 1238042]
+    // let sum = 0
+    // arr.forEach((element, index) => {
+    //   sum += element
+    // })
+    // console.log(sum)
+
+    /* --------------- */
+    // Example 3: Find the largest number in the array
+    // const arr = [250, 150, 600, 450, 300]
+    // let max = 0
+    // arr.forEach((element) => {
+    //   if(element > max) {
+    //     max = element 
+    //   }
+    // })
+    // console.log(max)
+
+    /* --------------- */
+    // Example 4: Filter even numbers from an array
+    // const arr = [100, 97, 86, 91, 75]
+
+    // const result = []
+    // arr.forEach((element) => {
+    //   if(element % 2 == 0) {
+    //     result.push(element)
+    //   }
+    // })
+    // console.log(result)
+
+    /* --------------- */
+    // Example 5: Return an array which has elements multipled by 2
+    // Expected O/P: [4, 6, 10, 14, 18]
+    // const arr = [2, 3, 5, 7, 9]
+
+    // const result = []
+    // arr.forEach(element => {
+    //   result.push(element * 2)
+    // })
+    // console.log(result)
+
+    /*
+       2. filter() ***
+          - Syntax:
+            arr.filter((element, index) => {
+              return "condition"
+            })
+          - Iterate through the elements of the array and execute callback for each element
+          - Callback parameters:
+            - 1st parameter: Element
+            - 2nd parameter: Index
+          - Returns a filtered array based on the condition provided. For each element, a boolean value is returned by the callback, if true - value is added to the filtered array, else skipped
+            - Does not modify the original array
+          - Additional pointers
+            - If "true" boolean value is returned by the callback, filtered array will have all the elements
+            - If "false" boolean value is returned by the callback, filtered array will be an empty array
+            - filteredArray.length <= originalArray.length
+    */
+
+    /* --------------- */
+    // Example 1: Filter even numbers from an array
+    // const arr = [100, 97, 86, 91, 75]
+
+    // const result = arr.filter(element => {
+    //   return element % 2 == 0 
+    // })
+    // console.log(result)
+
+    /* --------------- */
+    // Example 2: Filter student names which have exactly 5 characters
+    // const students = ['Kelly', 'Kayla', 'Jeff', 'Madeline', 'Sonal']
+    // const result = students.filter(student => {
+    //   return student.length == 5
+    // })
+    // console.log(result)
+
+    // const arr = [3, 6, 2, 5, 1]
+    // const result = arr.filter(e => {
+    //   return false
+    // })
+    // console.log(result)
+
+    /*
+        3. map() ***
+          - Syntax:
+            arr.map((element, index) => {
+              return [modifiedElement]
+            })
+          - Iterate through the elements of the array and execute callback for each element
+          - Callback parameters:
+            - 1st parameter: Element
+            - 2nd parameter: Index
+          - Returns a modified array based on return value provided. For each element, a modified value can be returned which will be the element at that index in the returned array
+            - Does not modify the original array
+          - Additional pointers
+            - mappedArray.length = originalArray.length
+            - If nothing is returned, undefined is the value at that index
+    */
+
+    /* --------------- */
+    // Example 1: Return an array which has elements multipled by 2
+    // Expected O/P: [4, 6, 10, 14, 18]
+    // const arr = [2, 3, 5, 7, 9]
+    // const result = arr.map(element => {
+    //   return element * 2
+    // })
+    // console.log(result)
+
+    /* --------------- */
+    // Example 2: Return an array with square of elements in the input array
+    // Expected O/P: [4, 49, 9, 36, 25]
+    // const arr = [2, 7, 3, 6, 5]
+    // const result = arr.map(e => {
+    //   return e ** 2
+    // })
+    // console.log(result)
+
+    /* --------------- */
+    // Example 3: Return an array with full name of users
+    // Expected O/P: ['Yaritza Hernandez', 'Madeline WG', 'Mary Moreno']
+    // const users = [
+    //   {
+    //     firstName: 'Yaritza',
+    //     lastName: 'Hernandez'
+    //   },
+    //   {
+    //     firstName: 'Madeline',
+    //     lastName: 'WG'
+    //   }, 
+    //   {
+    //     firstName: 'Mary',
+    //     lastName: 'Moreno'
+    //   },
+    //   {
+    //     firstName: 'Kelly',
+    //     lastName: 'Cook'
+    //   }
+    // ]
+
+    // const fullNames = users.map(user => {
+    //   return `${user.firstName} ${user.lastName}`
+    // })
+    // console.log(fullNames)
+
+    /* --------------- */
+    // Example 4: Return an array with another field "votingEligibility" in the user object, with value as "ELIGIBLE"/ "NOT ELIGIBLE"
+    // const users = [
+    //   {
+    //     firstName: 'Yaritza',
+    //     lastName: 'Hernandez',
+    //     age: 17
+    //   },
+    //   {
+    //     firstName: 'Madeline',
+    //     lastName: 'WG',
+    //     age: 21
+    //   }, 
+    //   {
+    //     firstName: 'Mary',
+    //     lastName: 'Moreno',
+    //     age: 19
+    //   },
+    //   {
+    //     firstName: 'Kelly',
+    //     lastName: 'Cook',
+    //     age: 18
+    //   }
+    // ]
+
+    // const result = users.map(user => {
+    //   user.votingEligibility = user.age >= 18 ? "ELIGIBLE" : "NOT ELIGIBLE"
+    //   return user
+    // })
+
+    // const result = users.map(user => {
+    //   const newUser = { ...user }
+    //   newUser.votingEligibility = user.age >= 18 ? "ELIGIBLE" : "NOT ELIGIBLE"
+    //   return newUser
+    // })
+
+    // console.log(result)
+
+    /* --------------- */
+    // Example 5: Return an array with "EVEN/ODD" string fir given set of input elements in the array
+    // Expected O/P: ['EVEN', 'ODD', 'EVEN', 'EVEN', 'ODD']
+    // const arr = [2, 5, 8, 10, 11]
+    // const result = arr.map(e =>  e % 2 == 0 ? "EVEN" : "ODD")
+    // console.log(result)
+
+    /*
+      4. some()
+        - Syntax:
+          arr.some((element, index) => {
+            return condition
+          })
+        - Iterate through the elements of the array and execute callback for each element
+        - Callback parameters:
+          - 1st parameter: Element
+          - 2nd parameter: Index
+        - Returns a true/false based on the condition provided if there exists "at least one element" that satisfies the condition
+    */
+
+    // const arr = [3, 5, 9, 1, 7]
+    // const result = arr.some(e => {
+    //   return e % 2 ===  0
+    // })
+    // console.log(result)
+
+    /*
+      5. every()
+        - Syntax:
+          arr.every((element, index) => {
+            return condition
+          })
+        - Iterate through the elements of the array and execute callback for each element
+        - Callback parameters:
+          - 1st parameter: Element
+          - 2nd parameter: Index
+        - Returns a true/false based on the condition provided if "all the elements" satisfy the condition
+    */
+
+    // const arr = [8, 2, 4, 6, 10]
+    // const result = arr.every(e => {
+    //   return e % 2 ===  0
+    // })
+    // console.log(result)
+
+    /*
+      6. find()
+        - Syntax:
+          arr.find((element, index) => {
+            return condition
+          })
+        - Iterate through the elements of the array and execute callback for each element
+        - Callback parameters:
+          - 1st parameter: Element
+          - 2nd parameter: Index
+        - Returns the first element that matches the condition. If none of the elements match the condition, then undefined is returned
+    */
+
+    // const arr = [99, 97, 85, 91, 75]
+    // const result = arr.find(element => {
+    //   return element % 2 == 0 
+    // })
+    // console.log(result)
+
+    /*
+      7. findIndex()
+        - Syntax:
+          arr.findIndex((element, index) => {
+            return condition
+          })
+        - Iterate through the elements of the array and execute callback for each element
+        - Callback parameters:
+          - 1st parameter: Element
+          - 2nd parameter: Index
+        - Returns the index of the first element that matches the condition. If none of the elements match the condition, then -1 is returned
+    */
+
+    // const arr = [99, 97, 85, 91, 75]
+    // const result = arr.findIndex(element => {
+    //   return element % 2 == 0 
+    // })
+    // console.log(result)
+  </script>
+</body>
+</html>

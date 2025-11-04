@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class Work</title>
+</head>
+<body>
+    <h1>Class Work 11/4/2025</h1>
+    <p>This is a simple HTML document.</p>
+
+<script>
+
+  // Example 1: Simple iteration
+// const arr = [100, 150, 200, 250, 300];
+// arr.forEach((element, index) => {
+//   console.log(index, element);
+// });
+
+ // Example 2: Calculate sum of array elements
+// const arr = [129, 346666, 2044034, 1238042];
+// let sum = 0;
+// arr.forEach((element, index) => {
+//   sum += element;
+// })
+// console.log(sum);
+
+// Simple version using reduce
+// const sum = [129, 346666, 2044034, 1238042].reduce((total, num) => total + num, 0);
+// console.log(sum);
+
+// Example 3: Finding the largest number in an array
+// const arr = [250, 150, 600, 450, 300];
+// let max = 0;
+// arr.forEach((element) => {
+//   if (element > max) {
+//     max = element;
+//   }
+// })
+
+// console.log(max);
+
+// 📝 Explanation:
+// 🔁 Step-by-step (each iteration):
+// Iteration	element	Current max before check	Condition (element > max)?	Updated max
+// 1	250	0	✅ Yes → 250 > 0	250
+// 2	150	250	❌ No → 150 < 250	250
+// 3	600	250	✅ Yes → 600 > 250	600
+// 4	450	600	❌ No → 450 < 600	600
+// 5	300	600	❌ No → 300 < 600	600
+// 🧾 Final Output:
+// console.log(max); // 600
+
+// Return an array which has elements multiplied by 2
+// const arr = [2, 3, 5, 7, 9];
+// const result = [];
+
+// arr.forEach((element) => {
+//   result.push(element * 2);
+// });
+
+// console.log(result);
+
+// Example 5: Return an array with "EVEN/ODD" string fir given set of input elements in the array
+
+    // Expected O/P: ['EVEN', 'ODD', 'EVEN', 'EVEN', 'ODD']
+
+  const arr = [2, 5, 8, 10, 11];
+    const result = arr.map((element) => {
+      return element % 2 === 0 ? 'EVEN' : 'ODD';
+    });
+    console.log(result);
+
+
+
+
+
+</script>
+</body>
+</html>

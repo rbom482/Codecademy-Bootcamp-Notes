@@ -1,0 +1,157 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <div id="section-1" class="sections">
+    <h1 id="heading-1">Test 1</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam repellat sapiente sint sed, dolorum necessitatibus architecto autem voluptates distinctio repellendus aut labore odit rem? Id aliquam eligendi ullam pariatur et.</p>
+  </div>
+
+  <div id="section-2" class="sections">
+    <h1 id="heading-2">Test 2</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum minima aspernatur, saepe necessitatibus molestiae illo minus cupiditate atque eius consequatur dolores magnam alias beatae, et impedit repudiandae quidem iste inventore? Atque excepturi nam quisquam, aliquid et quo beatae architecto natus temporibus, quod iure in itaque omnis earum facere dolores facilis.</p>
+  </div>
+
+  <div id="section-3">
+    <h1>Hobbies</h1>
+    <ul id="hobbies">
+      <li class="hobby">Swimming</li>
+      <li class="hobby">Dancing</li>
+      <li class="hobby">Singing</li>
+    </ul>
+  </div>
+  
+  <div id="section-4">
+  </div>
+
+  <!-- <img src="https://media.geeksforgeeks.org/wp-content/uploads/20241120143259875787/DOM-Tree1.webp" width="600" height="300" id="img-1"> -->
+
+  <a href="https://www.facebook.com/" id="anchor-1">Facebook</a>
+
+  <form>
+    <input type="text" placeholder="Enter your name" id="name-input">
+  </form>
+
+  <script>
+    /*
+      # DOM (Document Object Model)
+        - Refers to the object representation of the HTML 'document tree'
+        - Reserved keyword: document
+        - Nodes: Represent individual HTML elements in the DOM tree
+
+        - Properties:
+          - body: Returns the body node of the HTML document
+          - head: Returns the head node of the HTML document
+          - title: Returns the title node of the HTML document
+          - children: Returns all child nodes of a given node
+          - firstElementChild: Returns the first child node of a given node
+          - lastElementChild: Returns the last child node of a given node
+          - nextElementSibling: Returns the next sibling element of a given node
+        - Methods (DOM selectors)
+          - getElementById('id') **: Returns the node with he specified 'id' value 
+          - getElementsByClassName('class') **: Returns an HTMLCollection (array of nodes) which have the specified 'class'
+          - getElementsByTagName('tag'): Returns an HTMLCollection (array of nodes) which use the specified 'tag'
+
+      - DOM Content Manipulation (Access/Update)
+        - innerText: Refers to the inner text content of the node
+        - innerHTML: Refers to the inner HTML content of the node (May behave like innerText if there is only text content inside the node)
+        - value: Refers to the data entered within form field node 
+      
+      - DOM Attribute Manipulation (Access/Update)
+        - Syntax: node.attributeName
+        - 'class' attribute:
+          - node.classList: Refers to the collection of classes assigned to a specific node
+            - node.classList.add('newClass'): Add a class
+            - node.classList.remove('existingClass'): Remove a class
+
+      - DOM Style Manipulation (Access/Update)
+        - Single style property
+          - node.style.propertyName (camelCase)
+        - Multiple style properties
+          - node.style.cssText = 'property1: value1; property2: value2; ...'
+        
+      - DOM Node Manipulation (Access/Update)
+        - document.createElement('tag'): Create a new node based on the HTML tag provided
+        - node.appendChild(childNode): Append the child node to the specified node
+        - node.append(childNode1, childNode2, ...): Appends multiple child nodes to the specified node
+        - node.remove(): Remove the specified node from the DOM
+
+      - Additional Notes:
+        - BOM (Browser Object Model)
+          - Reserved keyword: window
+    */
+
+    // console.log(document.getElementById('heading-1'))
+    // console.log(document.getElementById('heading-1').innerText)
+    // document.getElementById('heading-1').innerText = 'DOM Content Manipulation'
+
+    // console.log(document.getElementById('section-1'))
+    // console.log(document.getElementById('section-1').innerHTML)
+    // document.getElementById('section-1').innerHTML = `
+    //   <h1>DOM Basics</h1>
+    //   <p>Basics basics basics</p>
+    // `
+    // document.getElementById('hobbies').innerHTML = `
+    //   <li>Swimmimg</li>
+    //   <li>Dancing</li>
+    // `
+
+    // document.getElementById('name-input').value = 'Mary'
+
+    // document.getElementById('img-1').width = 400
+    // document.getElementById('img-1').height = 200
+    // document.getElementById('img-1').src = 'https://cdn.sanity.io/images/gpji8x82/production/5910b5ee6fa6049fedc86092a3bc6547d64d15b5-960x540.jpg?w=800'
+
+    // document.getElementById('anchor-1').href = 'https://google.com'
+
+
+    // document.getElementById('section-1').style.padding = '20px 10px'
+    // document.getElementById('section-1').style.backgroundColor = '#ADBBDA'
+    // document.getElementById('section-1').style.boxShadow = 'rgba(0, 0, 0, 0.24) 0px 3px 8px'
+    // document.getElementById('section-1').style.borderRadius = '6px'
+
+    // document.getElementById('section-1').style.cssText = `
+    //   padding: 20px 10px;
+    //   background-color: #ADBBDA;
+    //   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    //   border-radius: 6px;
+    // `
+
+    // console.log(document.getElementsByClassName('sections'))
+    // console.log(document.getElementsByClassName('hobby'))
+
+    // const hobbyNodes = document.getElementsByClassName('hobby')
+    // Array.from(hobbyNodes).forEach(node => {
+    //   node.style.cssText = 'padding: 2px; color: blue; border: 1px solid black; border-radius: 6px; margin: 5px 0'
+    // });
+
+    // console.log(document.getElementsByTagName('div'))
+    // console.log(document.getElementsByTagName('li'))
+    // console.log(document.getElementsByTagName('h1'))
+    // console.log(document.getElementsByTagName('p'))
+
+    const heading1 = document.createElement('h1')
+    heading1.innerText = 'Animals'
+    heading1.id = 'heading-4'
+    heading1.classList.add('headings')
+    heading1.classList.remove('headings')
+
+    const p1 = document.createElement('p')
+    p1.innerText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam repellat sapiente sint sed, dolorum necessitatibus architecto autem voluptates distinctio repellendus aut labore odit rem? Id aliquam eligendi ullam pariatur et.'
+
+    const hr1 = document.createElement('hr')
+
+    const section4 = document.getElementById('section-4')
+    // section4.appendChild(heading1)
+    // section4.appendChild(p1)
+
+    section4.append(heading1, p1, hr1)
+
+    // const section4 = document.getElementById('section-4')
+    // section4.remove()
+  </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Handling</title>
+  <style>
+    form {
+      background-color: cadetblue;
+      padding: 1em;
+      border-radius: 6px;
+      width: max-content;
+      margin: 2em auto;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    form h1{
+      margin: 0 0 0.5em;
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    form > div {
+      margin: 1em 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 1em;
+    }
+
+    form input {
+      border: none;
+      border-radius: 2px;
+      font-size: 0.75em;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h1>Registration form</h1>
+    <div>
+      <label for="name">Name</label>
+      <input type="text" placeholder="Enter your full name" id="name" autocomplete="off">
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="text" placeholder="Enter your email" id="email" autocomplete="off">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" placeholder="Enter your password" id="password" autocomplete="off">
+    </div>
+    <div>
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" placeholder="Re-enter your password" id="confirm-password" autocomplete="off">
+    </div>
+    <div>
+      <label>Gender</label>
+      <div>
+        <input type="radio" name="gender" value="MALE" class="gender">MALE
+        <input type="radio" name="gender" value="FEMALE" class="gender">FEMALE
+        <input type="radio" name="gender" value="OTHERS" class="gender">OTHERS
+      </div>
+    </div>
+    <div>
+      <label>Hobbies</label>
+      <div>
+        <input type="checkbox" name="hobby" value="SWIM" class="hobby">SWIM
+        <input type="checkbox" name="hobby" value="DANCE" class="hobby">DANCE
+        <input type="checkbox" name="hobby" value="SING" class="hobby">SING
+      </div>
+    </div>
+    <div style="justify-content: center;">
+      <button type="button" onclick="handleFormData()">Submit</button>
+    </div>
+  </form>
+
+  <script>
+    function handleFormData() {
+      const name = document.getElementById('name').value
+      const email = document.getElementById('email').value
+      const password = document.getElementById('password').value
+      const confirmPassword = document.getElementById('confirm-password').value
+
+      const genderOptions = document.getElementsByClassName('gender')
+      const selectedGender = Array.from(genderOptions).find(genderOption => {
+        return genderOption.checked
+      })
+
+      const hobbyOptions = document.getElementsByClassName('hobby')
+      let selectedHobbies = Array.from(hobbyOptions).filter(hobbyOption => {
+        return hobbyOption.checked
+      })
+      selectedHobbies = selectedHobbies.map(h => {
+        return h.value
+      })
+
+      const userData = {
+        name,
+        email,
+        password,
+        confirmPassword,
+        gender: selectedGender && selectedGender.value,
+        hobbies: selectedHobbies
+      }
+
+      console.log('User data collected', userData)
+    }
+  </script>
+</body>
+</html>

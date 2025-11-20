@@ -4,14 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Listener</title>
+  <style>
+    div {
+      padding: 1em;
+      margin: 1em;
+    }
+
+    #grandparent {
+      background-color: cadetblue;
+    }
+
+    #parent {
+      background-color: aquamarine;
+    }
+
+    #child {
+      background-color: azure;
+    }
+  </style>
 </head>
 <body>
   <!-- <input type="range" min="0" max="240" id="range-input" style="position: fixed; top: 0;"> -->
 
-  <input type="text" id="test-input" autocomplete="off">
+  <!-- <input type="text" id="test-input" autocomplete="off"> -->
 
-
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, quaerat eveniet. Cupiditate nihil ipsa consectetur inventore eius pariatur voluptate dignissimos. Hic, nulla eligendi sequi recusandae cum nemo fuga veniam et? Voluptates voluptatum iure soluta atque assumenda molestias exercitationem aut optio ut. Nihil debitis explicabo in alias eius et optio quae quod assumenda dolores, sequi error rem quam excepturi ratione beatae? Molestiae sit, voluptatibus enim voluptate quisquam, nulla illo incidunt iste rerum cupiditate sapiente distinctio omnis quos blanditiis sed quasi consequuntur hic culpa rem deleniti nobis asperiores. Ut illum modi magnam fugiat dicta expedita aliquid optio sed aliquam assumenda? Neque voluptatum ipsam at repudiandae illum eum, enim, suscipit quas quibusdam necessitatibus aspernatur vel autem delectus recusandae omnis quae voluptates? Sint quibusdam suscipit atque eligendi totam, porro possimus cum harum corporis facilis veritatis similique voluptates quisquam earum id dolore magnam omnis ipsa doloribus nemo. Dolor eligendi, quod molestiae dolorum consequuntur nisi quidem ex facilis cumque modi dignissimos eum asperiores nihil voluptatum! Magnam praesentium earum quia fugit, molestiae cupiditate iure sapiente! Tempore, temporibus? Dolorem rem provident, similique est quod repudiandae repellendus optio libero officia aliquid blanditiis reprehenderit, a maiores illo hic repellat suscipit, rerum sunt. Adipisci aspernatur enim cumque odit blanditiis inventore magni excepturi, animi iste consectetur dolorem esse ullam illum laborum quam quas magnam veritatis facere! Blanditiis cumque voluptas, in veritatis vitae, unde saepe et nulla voluptates consequatur commodi optio deserunt ratione officiis perferendis quo vero magni tempore nemo quasi? Pariatur voluptas sapiente facilis veritatis odit itaque molestias non mollitia minima? Saepe aliquam, fuga recusandae magnam rem, dolor, corporis similique ducimus porro iste sapiente cum! Illum provident reiciendis ratione doloribus unde suscipit pariatur beatae quis non quia accusamus voluptates inventore, dicta deleniti iste culpa quam libero cumque quos ipsa, tempore quasi cum repellendus officia? Distinctio sunt soluta unde quaerat architecto mollitia beatae reprehenderit excepturi minus. Fugiat, eaque vitae! Ea expedita velit temporibus nobis incidunt impedit, ullam neque iusto vero provident sapiente similique dolore numquam dignissimos hic, officiis minima minus! Totam omnis optio dolorum est. Quam et repellat doloremque reprehenderit quos dicta cum vel magnam deleniti? Eos at, ipsa id tenetur praesentium neque voluptas hic perspiciatis minima amet dolor temporibus. Corporis itaque ratione possimus saepe sint eum ad ipsum id laborum dolorem doloribus libero, velit at harum. Laudantium corporis in sint quam placeat dolores rerum maxime ad debitis cumque! Dolorum officiis, commodi temporibus et id provident suscipit voluptate voluptatum dolor placeat nemo aliquid perferendis non, corrupti quis odit in velit illum ratione earum eum? Incidunt maxime molestiae nesciunt obcaecati necessitatibus! Minus magnam alias officiis rem! Dolore obcaecati quae tenetur tempora magnam iusto maiores et est, odio nobis veritatis accusamus voluptates necessitatibus reiciendis consequatur cumque deleniti vel eius tempore omnis praesentium. Doloribus magni laboriosam odit, dolorem fugiat repudiandae dicta atque expedita earum quod tenetur iusto, quasi accusantium alias sit repellat, nostrum voluptates quaerat debitis velit ab non ipsa obcaecati tempore. Explicabo quod, fugiat quas consequatur odio sapiente, voluptatum eaque possimus natus totam necessitatibus iusto quia accusamus veritatis, ex temporibus in nostrum ullam corrupti. Velit.</p>
+  <div id="grandparent">
+    GRANDPARENT
+    <div id="parent">
+      PARENT
+      <div id="child">
+        CHILD
+      </div>
+    </div>
+  </div>
 
   <script>
     /*
@@ -85,6 +110,51 @@
     //   console.log('SCROLLED', window.scrollY)
     //   // document.getElementById('range-input').value = window.scrollY
     // })
+
+
+    /* --------------------------------------- */
+    /*
+      # Event Propagation: Process by which events are handled and propagated through the DOM tree (Applicable for nested elements)
+        - 2 phases
+          - Event capturing: Event is propagated from last ancestor to the child node and so on till the target element
+          - Event bubbling ***: Event is propagated from target node to the parent node and so on till the last ancestor element
+
+        - Stop event propagation
+          - event.stopPropagation()
+    */
+
+    const grandparent = document.getElementById('grandparent')
+    const parent = document.getElementById('parent')
+    const child = document.getElementById('child')
+
+
+    // Bubbling Phase
+    // grandparent.addEventListener('click', (event) => {
+    //   console.log('GRANDPARENT CLICKED')
+    // })
+
+    // parent.addEventListener('click', (event) => {
+    //   console.log('PARENT CLICKED')
+    //   event.stopPropagation()
+    // })
+
+    // child.addEventListener('click', (event) => {
+    //   console.log('CHILD CLICKED')
+    //   event.stopPropagation()
+    // })
+
+    // Capturing Phase
+    // grandparent.addEventListener('click', (event) => {
+    //   console.log('GRANDPARENT CLICKED')
+    // }, true)
+
+    // parent.addEventListener('click', (event) => {
+    //   console.log('PARENT CLICKED')
+    // }, true)
+
+    // child.addEventListener('click', (event) => {
+    //   console.log('CHILD CLICKED')
+    // }, true)
   </script>
 </body>
 </html>

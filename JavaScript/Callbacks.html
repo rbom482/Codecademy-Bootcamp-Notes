@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callbacks</title>
+</head>
+<body>
+  <script>
+    /*
+      # Callbacks: A function passed as an argument to another function so that it can be "executed later"
+        - Handle asynchronous code
+        - Syntax 1:
+          func2(func1)
+        - Syntax 2:
+          func2(function() {
+            // code
+          })
+    */
+
+    /* ----------------- */
+    // Synchronous code
+    // function func2(callback) {
+    //   console.log('func2')
+    //   callback()
+    // }
+    
+    // func2(() => {
+    //   console.log('func1')
+    // })
+
+    /* ----------------- */
+    // Asynchronous code
+
+    // function test(callback) {
+    //   console.log(1)
+    //   console.log(2)
+    //   setTimeout(() => {
+    //     console.log(3)
+    //     callback()
+    //   }, 3000)
+    // }
+
+    // test(() => {
+    //   console.log(4)
+    //   console.log(5)
+    // })
+
+    /* ----------------- */
+    /*
+      Example: Food order status
+        1. ORDER ACCEPTED: Instantly
+        2. ORDER PREPATED: After 10 seconds
+    */
+
+    // function orderAccepted(callback) {
+    //   console.log('ORDER ACCEPTED')
+    //   setTimeout(() => {
+    //     callback()
+    //   }, 10*1000)
+    // }
+
+    // orderAccepted(function () {
+    //   console.log('ORDER PREPARED')
+    // })
+
+    /* ----------------- */
+    /*
+      Example: Fetch data from the server, then process that data
+        1. Fetching data from the server: 7 seconds
+        2. Processing the data: 5 seconds
+
+        Total time: 7s + 5s = 12s
+    */
+
+    // function fetchData(callback) {
+    //   console.log('FETCHING DATA FROM THE SERVER ...')
+    //   setTimeout(() => {
+    //     console.log('FETCHED DATA SUCCESSFULLY ✅')
+    //     callback()
+    //   }, 7000)
+    // }
+
+    // fetchData(function () {
+    //   console.log('NOW, PROCESSING DATA ...')
+    //   setTimeout(() => {
+    //     console.log('PROCESSED DATA SUCCESSFULLY ✅')
+    //   }, 5000)
+    // })
+  </script>
+</body>
+</html>

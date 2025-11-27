@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promises</title>
+</head>
+<body>
+  <script>
+    /*
+      # Promises ***: Objects that represent the eventual completion or failure of an asynchronous task
+        - Properties:
+          - State:
+            - Pending
+            - Resolved (Fulfilled)
+            - Rejected
+          - Result: Any value that can be passed along with resolving/rejecting a promise
+        - Method
+          - then(): Callback handles the resolved state of the promise
+          - catch(): Callback handle the rejected state of the promise
+
+        - Syntax: 
+          - Creating a promise
+            const promise1 = new Promise((resolve, reject) => {
+              // Logic to resolve/reject the promise
+            })
+            - Uses the Promise constructor to create a promise object
+            - Promise constructor takes a callback function with 2 parameters:
+              - resolve(): Method to resolve the promise
+              - reject(): Method to reject the promise
+            - With resolve/reject methods, result value can be passed as an argument
+          - Handling a promise
+            promise1.then(() => {
+              // Logic to handle resolved state
+            }).catch(() => {
+              // Logic to handle rejected state
+            })
+            - Result can be accessed as the callback parameter for both .then()/ .catch() methods based on resolved/rejected state respectively
+    */
+
+    // # Example 1 (Synchronous)
+    // const promise1 = new Promise((resolve, reject) => {
+    //   // resolve()
+    //   reject()
+    // })
+    // console.log(promise1)
+
+    // const promise1 = new Promise((resolve, reject) => {
+    //   // resolve('Hi')
+    //   reject('Bye')
+    // })
+    // console.log(promise1)
+
+    // promise1.then(() => {
+    //   console.log('Promise was resolved')
+    // }).catch(() => {
+    //   console.log('Promise was rejected')
+    // })
+
+    // promise1.then((resolvedResult) => {
+    //   console.log('Promise was resolved', resolvedResult)
+    // }).catch((rejectedResult) => {
+    //   console.log('Promise was rejected', rejectedResult)
+    // })
+
+    // # Example 2 (Asynchronous)
+    // const promise1 = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve('Hi')
+    //   }, 5000)
+    // })
+
+    // promise1.then((resolvedResult) => {
+    //   console.log('Promise resolved after 5 seconds:', resolvedResult)
+    // }).catch((rejectedResult) => {
+    //   console.log('Promise rejected after 5 seconds:', rejectedResult)
+    // })
+
+    // const fetchStudentsPromise = new Promise((resolve, reject) => {
+    //   const STUDENTS = [
+    //       {
+    //           name: 'Madeline',
+    //           batch: 2,
+    //           course: 'MERN'
+    //       },
+    //       {
+    //           name: 'Simon',
+    //           batch: 5,
+    //           course: 'MEAN'
+    //       },
+    //       {
+    //           name: 'Sonal',
+    //           batch: 2,
+    //           course: 'MEVN'
+    //       }
+    //   ]
+
+    //   setTimeout(() => {
+    //     // resolve(STUDENTS)
+    //     reject('Server is down!')
+    //   }, 5000)
+    // })
+
+    // console.log('Fetching students ...')
+
+    // fetchStudentsPromise.then((resolvedResult) => {
+    //   console.log('Data fetched from the server:', resolvedResult)
+    // }).catch((error) => {
+    //   console.log('Something went wrong:', error)
+    // })
+
+    // # Promise Function: Function which returns promise object
+    // const fetchStudents = () => new Promise((resolve, reject) => {
+    //   const STUDENTS = [
+    //       {
+    //           name: 'Madeline',
+    //           batch: 2,
+    //           course: 'MERN'
+    //       },
+    //       {
+    //           name: 'Simon',
+    //           batch: 5,
+    //           course: 'MEAN'
+    //       },
+    //       {
+    //           name: 'Sonal',
+    //           batch: 2,
+    //           course: 'MEVN'
+    //       }
+    //   ]
+
+    //   console.log('Fetching students ...')
+    //   setTimeout(() => {
+    //     resolve(STUDENTS)
+    //     // reject('Server is down!')
+    //   }, 5000)
+    // })
+
+    // fetchStudents().then((resolvedResult) => {
+    //   console.log('Data fetched from the server:', resolvedResult)
+    // }).catch((error) => {
+    //   console.log('Something went wrong:', error)
+    // })
+
+    /*
+      # Promise chaining **:
+        - Syntax:
+          promise.then().then().then() ... .catch()
+        - During promise handling, if .then() returns a new promise, another .then() method needs to be 'chained' to handle this new promise. This pattern continues until there is a .then() method which does not return any promise
+      
+    */
+    // const promise1 = () => new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve()
+    //   }, 5000)
+    // })
+    // const promise2 = () => new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve()
+    //   }, 3000)
+    // })
+
+    // promise1().then(() => {
+    //   console.log('Promise 1 resolved')
+    //   return promise2()
+    // }).then(() => {
+    //   console.log('Promise 2 resolved')
+    // }).catch(() => {
+    //   console.log('One of the promised was rejected')
+    // })
+
+    /* ---------------------- */
+    /*
+      Example: Fetch data from the server, then process that data
+        1. Fetching data from the server: 7 seconds
+        2. Processing the data: 5 seconds
+
+        Total time: 7s + 5s = 12s
+    */
+
+    // function fetchData() {
+    //   console.log('FETCHING DATA FROM THE SERVER ...')
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       console.log('FETCHED DATA SUCCESSFULLY ✅')
+    //       resolve()
+    //     }, 7000)
+    //   })
+    // }
+
+    // function processData() {
+    //   console.log('NOW, PROCESSING DATA ...')
+    //   return new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //       console.log('PROCESSED DATA SUCCESSFULLY ✅')
+    //       resolve()
+    //     }, 5000)
+    //   })
+    // }
+
+    // fetchData()
+    //   .then(() => processData())
+    //   .then(() => {})
+    //   .catch(() => console.log('Something went wrong'))
+  </script>
+</body>
+</html>

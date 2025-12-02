@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Handling</title>
+</head>
+<body>
+  <h1 id="test"></h1>
+
+  <script>
+    /*
+      # Error Handling ***:
+        - Runtime errors in JS terminate the execution process and the rest of the code is not executed
+        - Error handling is a mechanism to handle these runtime errors and provide meaningful error messages to the user
+        - Syntax:
+          try {
+            // code which is probable to throw an error
+          } catch (error) {
+            // If error is thrown, handle it here
+          }
+        - finally {}: Executes in both the scenarios
+        - throw keyword: Throw custom errors
+          - Custom error: new Error('error message')
+          - Syntax: throw new Error('error message')
+        
+        - Additional note:
+          - If no error: START -> try -> END
+          - If error: START -> try -> catch -> END
+    */
+    /* --------------- */
+    // console.log('START')
+
+    // try {
+    //   const x = 10
+    //   x = 20
+    // } catch(error) {
+    //   alert('Something went wrong at our end')
+    //   console.log(error)
+    // }
+
+    // document.getElementById('test').innerText = 'Welcome to our application'
+
+    // console.log('END')
+
+    /* --------------- */
+    // console.log('START')
+
+    // const input = prompt('Please enter transaction details in JSON string')
+
+    // try {
+    //   const transactionDetails = JSON.parse(input)
+    //   console.log(transactionDetails)
+    // } catch(error) {
+    //   alert('JSON string provided is not in the correct format')
+    // }
+
+    // console.log('END')
+
+    /* --------------- */
+
+    // console.log('START')
+
+    // try {
+    //   console.log('TRY')
+    //   const x = 5
+    //   x = 10
+    // } catch(error) {
+    //   console.log('CATCH', error)
+    // } finally {
+    //   console.log('FINALLY')
+    // }
+
+    // console.log('END')
+
+    /* --------------- */
+
+    // console.log('START')
+
+    // try {
+    //   const divident = Number(prompt('Enter divident'))
+    //   const divisor = Number(prompt('Enter divisor'))
+      
+    //   if(divisor == 0) {
+    //     throw new Error('Division by zero not allowed')
+    //   }
+
+    //   const result = divident / divisor
+    //   console.log(result)
+    // } catch(error) {
+    //   console.log('CATCH', error)
+    // } finally {
+    //   console.log('FINALLY')
+    // }
+
+    // console.log('END')
+  </script>
+</body>
+</html>

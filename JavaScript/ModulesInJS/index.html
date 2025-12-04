@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modules in JS</title>
+</head>
+<body>
+  <script>
+    /*
+      # Modules in JS:
+        - Collection of code related to specific functionality
+        - Benefits:
+          - Improves readability and maintainability
+          - Avoids redundancy (Using DRY principle) 
+          - Achieve encapsulation
+        - Syntax:
+          <script src="user.js" type="module">
+        - Import/Export:
+          - Export: An internal entity sent ouside
+          - Import: An external entity brough inside
+        - Types of exports/imports:
+          - Default export/import ('default' keyword)
+            - Can only export a single entity
+            - Syntax:
+              - Export: export default func1
+              - Import: import func1 from './relative-path'
+            - Rename entity during import
+              - import test from './relative-path'
+          - Named export/import
+            - Can export multiple entities
+            - Syntax:
+              - Export 
+                - Way 1: export { funct1, funct2 }
+                - Way 2: Export during declaration
+                  export function func1() {}
+                  export function func2() {}
+              - Import: import { funct1, funct2 } from './relative-path'
+            - Rename entity during import ('as' keyword)
+              - Syntax:
+                import { 
+                  funct1 as abc, 
+                  funct2 as def
+                } from './relative-path'
+        - Relative path:
+          - ../ Parent folder
+          - ./ Current folder
+          - / Child folder
+    */
+  </script>
+  <script src="index.js" type="module"></script>
+  <script src="user.js" type="module"></script>
+  <script src="product.js" type="module"></script>
+  <script src="cart.js" type="module"></script>
+  <script src="order.js" type="module"></script>
+  <script src="feature/abc.js" type="module"></script>
+</body>
+</html>

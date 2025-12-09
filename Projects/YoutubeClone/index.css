@@ -1,0 +1,23 @@
+body {
+  background-color: #0F0F0F;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+#search-field-wrapper {
+  min-width: 500px;
+}
+
+.badge {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  #search-field-wrapper {
+    min-width: auto;
+  }
+}
+
+/* Replacing bootstrap class styles */
+.bg-body-tertiary {
+  background-color: #0F0F0F !important;
+}
